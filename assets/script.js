@@ -20,6 +20,7 @@ const slides = [
 const nbSlide = slides.length;
 const right = document.querySelector('.arrow_right');
 const left = document.querySelector('.arrow_left');
+const dots = document.querySelector('.dot');
 let count = 0;
 
 function slideRight(){
@@ -47,3 +48,4 @@ function slideLeft(){
 }
 
 left.addEventListener('click', slideLeft)
+
