@@ -32,6 +32,11 @@ function slideRight(){
 
 	console.log(count);
 
+	if (count === 0) {
+		dots.classList.add('dot_selected');
+	} else {
+		dots.classList.remove('dot_selected');
+	}
 }
 
 right.addEventListener('click', slideRight)
@@ -45,7 +50,11 @@ function slideLeft(){
 
 	console.log(count);
 
+	if (count === 0) {
+		dots.classList.add('dot_selected');
+	} else {
+		dots.classList.remove('dot_selected');
+	}
 }
 
 left.addEventListener('click', slideLeft)
-
