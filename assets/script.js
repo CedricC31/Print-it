@@ -1,18 +1,18 @@
 const slides = [
 	{
-		"image":"slide1.jpg",
+		image: 'slide1.jpg', alt: 'image 1',
 		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
-		"image":"slide2.jpg",
+		image: 'slide2.jpg', alt: 'image 2',
 		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
-		"image":"slide3.jpg",
+		image: 'slide3.jpg', alt: 'image 3',
 		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
-		"image":"slide4.png",
+		image: 'slide4.png', alt: 'image 4',
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
@@ -32,29 +32,29 @@ function slideRight(){
 
 	console.log(count);
 
-	if (count === 0) {
-		dots.classList.add('dot_selected');
-	} else {
-		dots.classList.remove('dot_selected');
-	}
+  setActiveDot();
+
 }
 
 right.addEventListener('click', slideRight)
 
 function slideLeft(){
-	if(count > 0){
-		count--;
-	} else {
-		count = nbSlide - 1;
-	}
+  if(count > 0){
+      count--;
+  } else {
+      count = nbSlide - 1;
+  }
 
-	console.log(count);
+  console.log(count);
 
-	if (count === 0) {
-		dots.classList.add('dot_selected');
-	} else {
-		dots.classList.remove('dot_selected');
-	}
+  setActiveDot();
+
 }
 
 left.addEventListener('click', slideLeft)
+
+function setActiveDot() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach(dot => dot.classList.remove('dot_selected'));
+  dots[count].classList.add('dot_selected');
+}
