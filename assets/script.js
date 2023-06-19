@@ -1,19 +1,19 @@
 const slides = [
 	{
 		image: 'slide1.jpg', alt: 'image 1',
-		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
+		tagLine :"Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
 		image: 'slide2.jpg', alt: 'image 2',
-		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
+		tagLine :"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
 		image: 'slide3.jpg', alt: 'image 3',
-		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
+		tagLine :"Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
 		image: 'slide4.png', alt: 'image 4',
-		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+		tagLine: "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
@@ -34,6 +34,10 @@ function slideRight(){
 
   setActiveDot();
 
+  document.querySelector('.banner-img').src = "assets/images/slideshow/" + slides[count].image;
+
+  document.querySelector('#banner p').innerHTML = slides[count].tagLine;
+
 }
 
 right.addEventListener('click', slideRight)
@@ -49,6 +53,10 @@ function slideLeft(){
 
   setActiveDot();
 
+  document.querySelector('.banner-img').src = "assets/images/slideshow/" + slides[count].image;
+
+  document.querySelector('#banner p').innerHTML = slides[count].tagLine;
+  
 }
 
 left.addEventListener('click', slideLeft)
