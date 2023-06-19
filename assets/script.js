@@ -36,7 +36,13 @@ function slideRight(){
 
   document.querySelector('.banner-img').src = "assets/images/slideshow/" + slides[count].image;
 
-  document.querySelector('#banner p').innerHTML = slides[count].tagLine;
+  const tagLine = slides[count].tagLine;
+  const tagLineElement = document.querySelector('#banner p');
+  const prefixText = tagLine.substring(0, tagLine.indexOf('<span>'));
+  tagLineElement.innerText = prefixText;
+  const spanElement = document.createElement('span');
+  spanElement.textContent = tagLine.match(/<span>(.*?)<\/span>/)[1];
+  tagLineElement.appendChild(spanElement);
 
 }
 
@@ -55,8 +61,14 @@ function slideLeft(){
 
   document.querySelector('.banner-img').src = "assets/images/slideshow/" + slides[count].image;
 
-  document.querySelector('#banner p').innerHTML = slides[count].tagLine;
-  
+  const tagLine = slides[count].tagLine;
+  const tagLineElement = document.querySelector('#banner p');
+  const prefixText = tagLine.substring(0, tagLine.indexOf('<span>'));
+  tagLineElement.innerText = prefixText;
+  const spanElement = document.createElement('span');
+  spanElement.textContent = tagLine.match(/<span>(.*?)<\/span>/)[1];
+  tagLineElement.appendChild(spanElement);
+
 }
 
 left.addEventListener('click', slideLeft)
