@@ -53,8 +53,6 @@ function slideRight() {
     count = 0;
   }
 
-  console.log(count);
-
   setActiveDot();
 
   imgBanner.src = "assets/images/slideshow/" + slides[count].image;
@@ -80,8 +78,6 @@ function slideLeft() {
   } else {
     count = nbSlide - 1;
   }
-
-  console.log(count);
 
   setActiveDot();
 
