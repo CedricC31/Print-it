@@ -4,27 +4,27 @@
 
 const slides = [
   {
-    image: 'slide1.jpg', alt: 'image 1',
+    image: 'slide1.jpg',
     tagLine: "Impressions tous formats <span>en boutique et en ligne</span>"
   },
   {
-    image: 'slide2.jpg', alt: 'image 2',
+    image: 'slide2.jpg',
     tagLine: "Tirages haute définition grand format <span>pour vos bureaux et events</span>"
   },
   {
-    image: 'slide3.jpg', alt: 'image 3',
+    image: 'slide3.jpg',
     tagLine: "Grand choix de couleurs <span>de CMJN aux pantones</span>"
   },
   {
-    image: 'slide4.png', alt: 'image 4',
+    image: 'slide4.png',
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>"
   }
 ];
 
 const left = document.querySelector('.arrow_left');
 const right = document.querySelector('.arrow_right');
-const dot = document.querySelector('.dot');
 const imgBanner = document.querySelector('.banner-img');
+const tagLineElement = document.querySelector('#banner p');
 
 const nbSlide = slides.length;
 let count = 0;
@@ -55,10 +55,11 @@ function slideRight() {
 
   setActiveDot();
 
-  imgBanner.src = "assets/images/slideshow/" + slides[count].image;
-
   const tagLine = slides[count].tagLine;
-  const tagLineElement = document.querySelector('#banner p');
+
+  imgBanner.src = "assets/images/slideshow/" + slides[count].image;
+  imgBanner.setAttribute('alt', tagLine);
+
   const prefixText = tagLine.substring(0, tagLine.indexOf('<span>'));
   const spanElement = document.createElement('span');
 
@@ -81,10 +82,11 @@ function slideLeft() {
 
   setActiveDot();
 
-  imgBanner.src = "assets/images/slideshow/" + slides[count].image;
-
   const tagLine = slides[count].tagLine;
-  const tagLineElement = document.querySelector('#banner p');
+
+  imgBanner.src = "assets/images/slideshow/" + slides[count].image;
+  imgBanner.setAttribute('alt', tagLine);
+  
   const prefixText = tagLine.substring(0, tagLine.indexOf('<span>'));
   const spanElement = document.createElement('span');
 
